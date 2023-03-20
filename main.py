@@ -1,8 +1,12 @@
 """
 """
 from typing import Optional
+from typing import Union
 from fastapi import FastAPI
 from enum import Enum
+from pydantic import BaseModel
+import requests
+
 
 app = FastAPI()
 
@@ -35,5 +39,3 @@ def get_blog_type(type: BlogType):
 @app.get('/blog/{id}')
 def get_blog(id: int):
     return {'message': f'Blog with id {id}'}
-
-
